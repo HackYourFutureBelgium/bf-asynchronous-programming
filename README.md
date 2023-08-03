@@ -35,35 +35,22 @@ Enter _asynchronous programming_: writing code that tells your browser to start 
 
 ---
 
-## Setting Up
-
-How to study the code in this repo.
-
-> You will need [NPM](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) and [nvm](https://github.com/nvm-sh/nvm#installing-and-updating) on your computer to study this material
->
-> Using a browser with good DevTools will make your life easier: [Chromium](http://www.chromium.org/getting-involved/download-chromium), [FireFox](https://www.mozilla.org/en-US/firefox/new/), [Edge](https://www.microsoft.com/edge), [Chrome](https://www.google.com/chrome/)
-
-1. Install or update the `study-lenses` package globally
-   - `npm install -g study-lenses` (if you do not have it already)
-   - `npm update -g study-lenses` (if you already have it installed)
-2. Clone this repository:
-   - `git clone https://github.com/HackYourFutureBelgium/bf-asynchronous-programming.git` (HTTPS)
-3. `cd` into the repository
-   - `cd bf-asynchronous-programming`
-4. Run the `study` command from your CLI
-   - `study`
-5. The material will open in your default browser, you're good to go!
-
-> If you have a windows computer and get this error:
->
-> - `... /study.ps1 cannot be loaded because running scripts ...`
->
-> follow the instructions in [this StackOverflow answer](https://stackoverflow.com/a/63424744), that should take care of it ; )
-
 ### Running Tests
 
 You can also run tests directly from CLI using the NPM script:
 
 - `npm run test -- ./path/to/file.js`
 
-[TOP](#asynchronous-programming)
+## Class recording
+
+<details>
+<summary>expand/collapse</summary>
+<br>
+
+### Week1
+
+### Week2
+
+### Week3
+
+</details>

@@ -18,26 +18,18 @@ Enter _asynchronous programming_: writing code that tells your browser to start 
   studying this material
 - [Setting Up](#setting-up): how to set up and study this material
 - [Suggested Study](./suggested-study.md): Helpful links for this module, useful
-but not required.
-<!--
-- [Study Path](#study-path): An introduction to the chapters in this repo and
-  the best way to work your way through them.
-- [Study Tips](./study-tips.md): Some tips for getting the most out of your time
-  learning to program.
-- [Lesson Plans](./lesson-plans): A few ideas for running lessons around this
-  material.
-  -->
+  but not required.
 
 ## Learning Objectives
 
-- 🥚 You understand the JavaScript Event Loop, and can demonstrate this by using `setTimeout` and `setInterval` to schedule simple tasks.
-- 🥚 You can explain why Asynchronous Programming is important for programs that have _blocking_ and _non-blocking_ tasks.
-- 🥚 You can explain the basics of the Client/Server model and HTTP requests and can `fetch` data from RESTful APIs.
-- 🐣 You can break down an asynchronous problem into smaller tasks and solve it using promises. This includes identify which tasks depend on each other and which are independent:
-  - _dependent tasks_: The return value from one task is required to start the next task, these must be completed in a specific order - `.then`
-  - _independent tasks_: These tasks do not use each other's return values, they can be completed at the same time - `Promise.all`system.
-- 🐣 You can fetch data from an API and render it into the DOM using `/api-calls`, `/handlers` and `async`/`await` syntax.
-- 🐣 You can write unit tests for functions that return promises using `async`/`await` syntax.
+- You understand the JavaScript Event Loop, and can demonstrate this by using `setTimeout` and `setInterval` to schedule simple tasks.
+- You can explain why Asynchronous Programming is important for programs that have _blocking_ and _non-blocking_ tasks.
+- You can explain the basics of the Client/Server model and HTTP requests and can `fetch` data from RESTful APIs.
+- You can break down an asynchronous problem into smaller tasks and solve it using promises. This includes identify which tasks depend on each other and which are independent:
+- _dependent tasks_: The return value from one task is required to start the next task, these must be completed in a specific order - `.then`
+- _independent tasks_: These tasks do not use each other's return values, they can be completed at the same time - `Promise.all`system.
+- You can fetch data from an API and render it into the DOM using `/api-calls`, `/handlers` and `async`/`await` syntax.
+- You can write unit tests for functions that return promises using `async`/`await` syntax.
 
 [TOP](#asynchronous-programming)
 
@@ -55,11 +47,9 @@ How to study the code in this repo.
    - `npm install -g study-lenses` (if you do not have it already)
    - `npm update -g study-lenses` (if you already have it installed)
 2. Clone this repository:
-   - `git clone git@github.com:HackYourFutureBelgium/asynchronous-programming.git` (SSH) (recommended)
-   - `git clone https://github.com/HackYourFutureBelgium/asynchronous-programming.git` (HTTPS)
-   - `gh repo clone HackYourFutureBelgium/asynchronous-programming` (GH CLI)
+   - `git clone https://github.com/HackYourFutureBelgium/bf-asynchronous-programming.git` (HTTPS)
 3. `cd` into the repository
-   - `cd asynchronous-programming`
+   - `cd bf-asynchronous-programming`
 4. Run the `study` command from your CLI
    - `study`
 5. The material will open in your default browser, you're good to go!

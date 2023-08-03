@@ -27,27 +27,27 @@ const { log, error } = labeledLogger();
 // --- declare the callbacks ---
 
 const logUser = (theUser) => {
-  // debugger;
-  log(`user ${theUser.id}:`, theUser);
+    // debugger;
+    log(`user ${theUser.id}:`, theUser);
 };
 
 const handleRejection = (rejection) => {
-  // debugger;
-  error('rejected:', rejection);
+    // debugger;
+    error('rejected:', rejection);
 };
 
 // --- use the callbacks ---
 
 log('fetching user 1');
 fetchUserById(1)
-  // log the parsed user object
-  .then(logUser)
-  // catch any errors in the network or the response
-  .catch(handleRejection);
+    // log the parsed user object
+    .then(logUser)
+    // catch any errors in the network or the response
+    .catch(handleRejection);
 
 log('fetching user 12 (there are only 10 users!)');
 fetchUserById(12)
-  .then((user) => logUser(user))
-  .catch((err) => handleRejection(err));
+    .then((user) => logUser(user))
+    .catch((err) => handleRejection(err));
 
 log('= = = =  the call stack is empty  = = = =');

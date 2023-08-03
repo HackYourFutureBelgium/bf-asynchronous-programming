@@ -23,42 +23,42 @@ const { log } = labeledLogger();
  * @throws {Error} HTTP error! status: {number}.
  */
 const fetchRelatedResources = async (paths = []) => {
-  // --- declare your resource's URL ---
-  const joinedPaths = paths.join('/');
-  const URL = `${ORIGIN}/${joinedPaths}`;
-  log(URL);
+    // --- declare your resource's URL ---
+    const joinedPaths = paths.join('/');
+    const URL = `${ORIGIN}/${joinedPaths}`;
+    log(URL);
 
-  // --- fetch the API data (this works!) ---
-  const encodedURL = encodeURI(URL);
-  const response = await fetch(encodedURL);
+    // --- fetch the API data (this works!) ---
+    const encodedURL = encodeURI(URL);
+    const response = await fetch(encodedURL);
 
-  // --- throw an error if the response is not ok (this works!) ---
-  if (!response.ok) {
-    const message = response.statusText
-      ? `${response.status}: ${response.statusText}\n-> ${URL}`
-      : `HTTP error! status: ${response.status}\n-> ${URL}`;
-    throw new Error(message);
-  }
+    // --- throw an error if the response is not ok (this works!) ---
+    if (!response.ok) {
+        const message = response.statusText
+            ? `${response.status}: ${response.statusText}\n-> ${URL}`
+            : `HTTP error! status: ${response.status}\n-> ${URL}`;
+        throw new Error(message);
+    }
 
-  /* --- parse the data if the response was ok (this works!) ---*/
-  const data = await response.json();
+    /* --- parse the data if the response was ok (this works!) ---*/
+    const data = await response.json();
 
-  // --- return the final data ---
-  return data;
+    // --- return the final data ---
+    return data;
 };
 
 // --- fetch and log the data ---
 
 fetchRelatedResources(['users', '3', 'albums'])
-  .then((data) => log('/users/3/albums', data))
-  .catch((err) => log('/users/3/albums', err));
+    .then((data) => log('/users/3/albums', data))
+    .catch((err) => log('/users/3/albums', err));
 
 fetchRelatedResources(['users', '3', 'posts'])
-  .then((data) => log('/users/3/posts', data))
-  .catch((err) => log('/users/3/posts', err));
+    .then((data) => log('/users/3/posts', data))
+    .catch((err) => log('/users/3/posts', err));
 
 fetchRelatedResources(['posts', '5', 'comments'])
-  .then((data) => log('/posts/5/comments', data))
-  .catch((err) => log('/posts/5/comments', err));
+    .then((data) => log('/posts/5/comments', data))
+    .catch((err) => log('/posts/5/comments', err));
 
 log('= = = =  the call stack is empty  = = = =');

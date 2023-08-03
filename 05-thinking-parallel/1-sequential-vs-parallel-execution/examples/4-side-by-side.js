@@ -16,13 +16,13 @@ const slowString = delayedValue(log);
 */
 
 const main = async () => {
-  slowString('.then 1').then(log);
+    slowString('.then 1').then(log);
 
-  log(await slowString('await 1'));
+    log(await slowString('await 1'));
 
-  slowString('.then 2').then(log);
+    slowString('.then 2').then(log);
 
-  log(await slowString('await 2'));
+    log(await slowString('await 2'));
 };
 
 main();

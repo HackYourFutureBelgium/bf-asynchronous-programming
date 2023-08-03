@@ -34,13 +34,13 @@ error('oops!');
 // see how long an asynchronous logging took
 //  (more on this in the coming exercises)
 const callback1 = () => {
-  log('at least 2000 ms later');
+    log('at least 2000 ms later');
 };
 setTimeout(callback1, 2000);
 
 const callback2 = () => {
-  log('at least 1000 ms later');
-  log('click on this label ^ to see an asyncrhonous callstack');
+    log('at least 1000 ms later');
+    log('click on this label ^ to see an asyncrhonous callstack');
 };
 setTimeout(callback2, 1000);
 

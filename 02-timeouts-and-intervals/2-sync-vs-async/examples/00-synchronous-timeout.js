@@ -30,11 +30,11 @@
  * @param  {...any} callbackArgs - Arguments to pass into the callback.
  */
 const synchronousTimeout = (callback, delay, ...callbackArgs) => {
-  const end = Date.now() + delay;
-  let now = Date.now();
-  while (now < end) {
-    now = Date.now();
-  }
+    const end = Date.now() + delay;
+    let now = Date.now();
+    while (now < end) {
+        now = Date.now();
+    }
 
-  callback(...callbackArgs);
+    callback(...callbackArgs);
 };

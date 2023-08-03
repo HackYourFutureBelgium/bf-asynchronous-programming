@@ -15,9 +15,9 @@ const { log } = labeledLogger();
 */
 
 const executor = (resolve, reject) => {
-  debugger;
-  log('in executor:', resolve, reject);
-  // executors do not return anything
+    debugger;
+    log('in executor:', resolve, reject);
+    // executors do not return anything
 };
 
 const promise1 = new Promise(executor);

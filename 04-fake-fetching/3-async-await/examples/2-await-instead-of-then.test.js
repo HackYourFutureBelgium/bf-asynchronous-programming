@@ -27,17 +27,17 @@ const { log } = labeledLogger();
  * @throws {Error} {status number}: {status text}
  */
 const getName = (id = 1) => {
-  log('.then id:', id);
+    log('.then id:', id);
 
-  // debugger;
-  const userPromise = fetchUserById(id);
+    // debugger;
+    const userPromise = fetchUserById(id);
 
-  const namePromise = userPromise.then((user) => {
-    log('.then user:', user);
-    return `${user.id}. ${user.name}`;
-  });
+    const namePromise = userPromise.then((user) => {
+        log('.then user:', user);
+        return `${user.id}. ${user.name}`;
+    });
 
-  return namePromise;
+    return namePromise;
 };
 
 /**
@@ -48,49 +48,49 @@ const getName = (id = 1) => {
  * @returns {Promise<string>} A promise that resolves to the user's id and name.
  */
 const getNameAsyncAwait = async (id = 1) => {
-  log('await fetching id:', id);
+    log('await fetching id:', id);
 
-  // debugger;
-  const user = await fetchUserById(id);
-  log(id, user);
+    // debugger;
+    const user = await fetchUserById(id);
+    log(id, user);
 
-  const name = `${user.id}. ${user.name}`;
+    const name = `${user.id}. ${user.name}`;
 
-  // name will be returned in a promise!
-  return name;
+    // name will be returned in a promise!
+    return name;
 };
 
 // --- test the functions ---
 // you can also use `async`/`await` in your unit tests
 
 describe("getName: returns a user's name and id", () => {
-  it('works for user 1', async () => {
-    const actual = await getName(1);
-    expect(actual).toEqual('1. Leanne Graham');
-  });
-  it('works for user 3', async () => {
-    const actual = await getName(3);
-    expect(actual).toEqual('3. Clementine Bauch');
-  });
-  it('works for user 9', async () => {
-    const actual = await getName(9);
-    expect(actual).toEqual('9. Glenna Reichert');
-  });
+    it('works for user 1', async () => {
+        const actual = await getName(1);
+        expect(actual).toEqual('1. Leanne Graham');
+    });
+    it('works for user 3', async () => {
+        const actual = await getName(3);
+        expect(actual).toEqual('3. Clementine Bauch');
+    });
+    it('works for user 9', async () => {
+        const actual = await getName(9);
+        expect(actual).toEqual('9. Glenna Reichert');
+    });
 });
 
 describe("getNameAsyncAwait: returns a user's name and id", () => {
-  it('works for user 1', async () => {
-    const actual = await getNameAsyncAwait(1);
-    expect(actual).toEqual('1. Leanne Graham');
-  });
-  it('works for user 3', async () => {
-    const actual = await getNameAsyncAwait(3);
-    expect(actual).toEqual('3. Clementine Bauch');
-  });
-  it('works for user 9', async () => {
-    const actual = await getNameAsyncAwait(9);
-    expect(actual).toEqual('9. Glenna Reichert');
-  });
+    it('works for user 1', async () => {
+        const actual = await getNameAsyncAwait(1);
+        expect(actual).toEqual('1. Leanne Graham');
+    });
+    it('works for user 3', async () => {
+        const actual = await getNameAsyncAwait(3);
+        expect(actual).toEqual('3. Clementine Bauch');
+    });
+    it('works for user 9', async () => {
+        const actual = await getNameAsyncAwait(9);
+        expect(actual).toEqual('9. Glenna Reichert');
+    });
 });
 
 log('= = = =  the call stack is empty  = = = =');

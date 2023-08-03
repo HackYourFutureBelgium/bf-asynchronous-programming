@@ -14,42 +14,42 @@ const { log } = labeledLogger();
  * @throws {Error} HTTP error! status: {number}.
  */
 const pokemonByName = async (name = '') => {
-  // --- declare your resource's URL ---
-  // docs: https://pokeapi.co/docs/v2#pokemon-section
-  const URL = `${ORIGIN}/pokemon/${name}`;
-  log(URL);
+    // --- declare your resource's URL ---
+    // docs: https://pokeapi.co/docs/v2#pokemon-section
+    const URL = `${ORIGIN}/pokemon/${name}`;
+    log(URL);
 
-  // --- fetch the API data (this works!) ---
-  const encodedURL = encodeURI(URL);
-  const response = await fetch(encodedURL);
+    // --- fetch the API data (this works!) ---
+    const encodedURL = encodeURI(URL);
+    const response = await fetch(encodedURL);
 
-  // --- throw an error if the response is not ok (this works!) ---
-  if (!response.ok) {
-    const message = response.statusText
-      ? `${response.status}: ${response.statusText}\n-> ${URL}`
-      : `HTTP error! status: ${response.status}\n-> ${URL}`;
-    throw new Error(message);
-  }
+    // --- throw an error if the response is not ok (this works!) ---
+    if (!response.ok) {
+        const message = response.statusText
+            ? `${response.status}: ${response.statusText}\n-> ${URL}`
+            : `HTTP error! status: ${response.status}\n-> ${URL}`;
+        throw new Error(message);
+    }
 
-  /* --- parse the data if the response was ok (this works!) ---*/
-  const data = await response.json();
+    /* --- parse the data if the response was ok (this works!) ---*/
+    const data = await response.json();
 
-  // --- return the final data ---
-  return data;
+    // --- return the final data ---
+    return data;
 };
 
 // --- fetch and log the data ---
 
 pokemonByName('pikachu')
-  .then((data) => log('pikachu', data))
-  .catch((err) => log('pikachu', err));
+    .then((data) => log('pikachu', data))
+    .catch((err) => log('pikachu', err));
 
 pokemonByName('mew')
-  .then((data) => log('mew', data))
-  .catch((err) => log('mew', err));
+    .then((data) => log('mew', data))
+    .catch((err) => log('mew', err));
 
 pokemonByName('lickitung')
-  .then((data) => log('lickitung', data))
-  .catch((err) => log('lickitung', err));
+    .then((data) => log('lickitung', data))
+    .catch((err) => log('lickitung', err));
 
 log('= = = =  the call stack is empty  = = = =');

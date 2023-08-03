@@ -19,13 +19,13 @@ const slowString = delayedValue(log);
 */
 
 const main = async () => {
-  log(await slowString('random delay'));
+    log(await slowString('random delay'));
 
-  log(await slowString('hello', 3000));
+    log(await slowString('hello', 3000));
 
-  log(await slowString('...', 2000));
+    log(await slowString('...', 2000));
 
-  log(await slowString('good bye', 1000));
+    log(await slowString('good bye', 1000));
 };
 
 main();

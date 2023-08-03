@@ -25,41 +25,41 @@ const { log, error } = labeledLogger();
 */
 
 const logAndReturn = (resolvedValue) => {
-  log('resolved value: ', resolvedValue);
-  return resolvedValue;
+    log('resolved value: ', resolvedValue);
+    return resolvedValue;
 };
 const handleRejection = (err) => {
-  error('promise was rejected: ', err);
+    error('promise was rejected: ', err);
 };
 
 // resolved to value 5
 new Promise((resolve, reject) => {
-  log('resolving 5'); // log 1
-  resolve(5);
+    log('resolving 5'); // log 1
+    resolve(5);
 })
-  .then((resolved) => logAndReturn(resolved)) // log 5
-  .then((value) => typeof value === 'number')
-  .then((resolved) => logAndReturn(resolved)) // log 7
-  .catch((err) => handleRejection(err));
+    .then((resolved) => logAndReturn(resolved)) // log 5
+    .then((value) => typeof value === 'number')
+    .then((resolved) => logAndReturn(resolved)) // log 7
+    .catch((err) => handleRejection(err));
 
 // resolved to value "hello"
 new Promise((resolve, reject) => {
-  log('resolving "hello"'); // log 2
-  resolve('hello');
+    log('resolving "hello"'); // log 2
+    resolve('hello');
 })
-  .then((resolved) => logAndReturn(resolved)) // log 6
-  .then((value) => typeof value === 'number')
-  .then((resolved) => logAndReturn(resolved)) // log 8
-  .catch((err) => handleRejection(err));
+    .then((resolved) => logAndReturn(resolved)) // log 6
+    .then((value) => typeof value === 'number')
+    .then((resolved) => logAndReturn(resolved)) // log 8
+    .catch((err) => handleRejection(err));
 
 // rejected (will skip all .thens)
 new Promise((resolve, reject) => {
-  log('rejecting!'); // log 3
-  reject(':(');
+    log('rejecting!'); // log 3
+    reject(':(');
 })
-  .then((resolved) => logAndReturn(resolved))
-  .then((value) => typeof value === 'number')
-  .then((resolved) => logAndReturn(resolved))
-  .catch((err) => handleRejection(err)); // log 9
+    .then((resolved) => logAndReturn(resolved))
+    .then((value) => typeof value === 'number')
+    .then((resolved) => logAndReturn(resolved))
+    .catch((err) => handleRejection(err)); // log 9
 
 log('= = = =  the call stack is empty  = = = ='); // log 4

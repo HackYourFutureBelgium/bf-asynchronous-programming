@@ -8,7 +8,7 @@ const { log, error } = labeledLogger();
 // --- declare some callbacks ---
 
 const createSummary = (user) => {
-  // write me!
+    // write me!
 };
 
 const handleError = (err) => error(err);

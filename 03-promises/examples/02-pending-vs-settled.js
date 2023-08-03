@@ -20,32 +20,32 @@ const { log } = labeledLogger();
 
 // always pending
 const pendingExecutor = (resolve, reject) => {
-  // neither resolve nor reject are called!
-  log('in pendingExecutor');
+    // neither resolve nor reject are called!
+    log('in pendingExecutor');
 };
 const pendingPromise = new Promise(pendingExecutor);
 log('always pending, never settled:', pendingPromise);
 
 // settled: fulfilled
 const fulfillExecutor = (resolve, reject) => {
-  log('in fulfillExecutor');
-  resolve('hello from fulfillExecutor!');
+    log('in fulfillExecutor');
+    resolve('hello from fulfillExecutor!');
 };
 const fulfilledPromise = new Promise(fulfillExecutor);
 log('settled, fulfilled:', fulfilledPromise);
 
 // settled: rejected (intentional)
 const rejectExecutor = (resolve, reject) => {
-  log('in rejectExecutor');
-  reject('good bye from rejectExecutor : (');
+    log('in rejectExecutor');
+    reject('good bye from rejectExecutor : (');
 };
 const rejectedPromise = new Promise(rejectExecutor);
 log('settled: rejected (intentional):', rejectedPromise);
 
 // settled: rejected (by error)
 const errorExecutor = (resolve, reject) => {
-  log('in errorExecutor');
-  null();
+    log('in errorExecutor');
+    null();
 };
 const errorPromise = new Promise(errorExecutor);
 log('settled: rejected (by error):', errorPromise);

@@ -1,14 +1,14 @@
 import { bases, sauces, sizes, toppings } from '../kitchen/ingredients.js';
 import {
-  addPreparedExtras,
-  addSauce,
-  addTopping,
-  addVegetables,
-  bag,
-  prepareExtra,
-  preparePortion,
-  prettyPrintMeal,
-  STATUSES,
+    addPreparedExtras,
+    addSauce,
+    addTopping,
+    addVegetables,
+    bag,
+    prepareExtra,
+    preparePortion,
+    prettyPrintMeal,
+    STATUSES,
 } from '../kitchen/steps.js';
 
 /**
@@ -20,36 +20,36 @@ import {
  */
 
 const aliceMeal = preparePortion(sizes.medium, bases.whiteRice)
-  .then((meal) => addVegetables(meal))
-  .then((meal) => addTopping(meal, toppings.calamari))
-  .then((meal) => addSauce(meal, sauces.sweetChilli))
-  .then((meal) => bag(meal));
+    .then((meal) => addVegetables(meal))
+    .then((meal) => addTopping(meal, toppings.calamari))
+    .then((meal) => addSauce(meal, sauces.sweetChilli))
+    .then((meal) => bag(meal));
 
 aliceMeal
-  .then((theMeal) => {
-    prettyPrintMeal(theMeal);
+    .then((theMeal) => {
+        prettyPrintMeal(theMeal);
 
-    describe('alice should get the meal she ordered', () => {
-      it('should have white rice', () => {
-        expect(theMeal.base).toEqual(bases.whiteRice);
-      });
-      it('should be bagged', () => {
-        expect(theMeal.status).toEqual(STATUSES.BAGGED);
-      });
-      it('should be medium', () => {
-        expect(theMeal.size).toEqual(sizes.medium);
-      });
-      it('should have sweet chili sauce', () => {
-        expect(theMeal.base).toEqual(bases.whiteRice);
-      });
-      it('should have calamari as a topping', () => {
-        expect(theMeal.topping).toEqual(toppings.calamari);
-      });
-      describe('the meal should have no extras', () => {
-        it('containing 0 items', () => {
-          expect(theMeal.extras.length).toEqual(0);
+        describe('alice should get the meal she ordered', () => {
+            it('should have white rice', () => {
+                expect(theMeal.base).toEqual(bases.whiteRice);
+            });
+            it('should be bagged', () => {
+                expect(theMeal.status).toEqual(STATUSES.BAGGED);
+            });
+            it('should be medium', () => {
+                expect(theMeal.size).toEqual(sizes.medium);
+            });
+            it('should have sweet chili sauce', () => {
+                expect(theMeal.base).toEqual(bases.whiteRice);
+            });
+            it('should have calamari as a topping', () => {
+                expect(theMeal.topping).toEqual(toppings.calamari);
+            });
+            describe('the meal should have no extras', () => {
+                it('containing 0 items', () => {
+                    expect(theMeal.extras.length).toEqual(0);
+                });
+            });
         });
-      });
-    });
-  })
-  .catch((err) => console.error(err));
+    })
+    .catch((err) => console.error(err));

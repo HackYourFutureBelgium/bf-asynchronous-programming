@@ -22,35 +22,35 @@ const { log, error } = labeledLogger();
 */
 
 const logFulfilledValue = (value) => {
-  log('fulfilled:', value);
+    log('fulfilled:', value);
 };
 
 const logRejectedValue = (value) => {
-  error('rejected:', value);
+    error('rejected:', value);
 };
 
 // fulfilled promise
 new Promise((resolve) => {
-  log('resolve executor'); // 1
-  resolve('success!');
+    log('resolve executor'); // 1
+    resolve('success!');
 })
-  .then((val) => logFulfilledValue(val)) // 5
-  .catch((val) => logRejectedValue(val));
+    .then((val) => logFulfilledValue(val)) // 5
+    .catch((val) => logRejectedValue(val));
 
 // rejected promise
 new Promise((resolve, reject) => {
-  log('reject executor'); // 2
-  reject('no success:(');
+    log('reject executor'); // 2
+    reject('no success:(');
 })
-  .then((val) => logFulfilledValue(val))
-  .catch((val) => logRejectedValue(val)); // 6
+    .then((val) => logFulfilledValue(val))
+    .catch((val) => logRejectedValue(val)); // 6
 
 // error in promise
 new Promise(() => {
-  log('error executor'); // 3
-  null();
+    log('error executor'); // 3
+    null();
 })
-  .then((val) => logFulfilledValue(val))
-  .catch((val) => logRejectedValue(val)); // 7
+    .then((val) => logFulfilledValue(val))
+    .catch((val) => logRejectedValue(val)); // 7
 
 log('= = = =  the call stack is empty  = = = ='); // 4

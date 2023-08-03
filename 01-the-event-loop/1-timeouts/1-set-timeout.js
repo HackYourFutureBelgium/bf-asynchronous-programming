@@ -7,14 +7,14 @@
 //  in other words, it executes your callback asynchronously
 
 const callback1 = () => {
-  console.log('hello from timeout 1');
+    console.log('hello from timeout 1');
 };
 setTimeout(callback1, 3000);
 
 console.log('scheduled timeout 1');
 
 const callback2 = () => {
-  console.log('bonjour from timeout 2');
+    console.log('bonjour from timeout 2');
 };
 setTimeout(callback2, 2000);
 

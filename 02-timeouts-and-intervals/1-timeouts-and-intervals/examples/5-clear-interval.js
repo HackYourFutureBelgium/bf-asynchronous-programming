@@ -6,14 +6,14 @@ const { log } = labeledLogger();
 //  this happens by passing the id as an argument to clearInterval
 
 const callback1 = () => {
-  log('interval ...');
+    log('interval ...');
 };
 const intervalId = setInterval(callback1, 500);
 log('scheduled interval', intervalId);
 
 const callback2 = () => {
-  log('timeout!');
-  clearInterval(intervalId);
+    log('timeout!');
+    clearInterval(intervalId);
 };
 setTimeout(callback2, 3000);
 log('scheduled timeout');

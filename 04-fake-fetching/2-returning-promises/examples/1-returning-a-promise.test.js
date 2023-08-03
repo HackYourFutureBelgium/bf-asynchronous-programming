@@ -25,17 +25,17 @@ const { log } = labeledLogger();
  * @throws {Error} {status number}: {status text}
  */
 const getUserName = (id = 1) => {
-  log('fetching user ' + id);
-  const userPromise = fetchUserById(id);
+    log('fetching user ' + id);
+    const userPromise = fetchUserById(id);
 
-  const readName = (user) => {
-    log(`user ${id}:`, user);
-    return user.name;
-  };
-  const namePromise = userPromise.then(readName);
+    const readName = (user) => {
+        log(`user ${id}:`, user);
+        return user.name;
+    };
+    const namePromise = userPromise.then(readName);
 
-  // return a promise that resolves to the user's name
-  return namePromise;
+    // return a promise that resolves to the user's name
+    return namePromise;
 };
 
 // --- test the function that returns a promise ---
@@ -45,33 +45,33 @@ const getUserName = (id = 1) => {
 //  and fail if the promise rejects
 
 describe("getUserName: returns a user's name", () => {
-  it("gets user 2's name", () => {
-    const namePromise = getUserName(2);
-    const assertionPromise = namePromise.then((actual) => {
-      expect(actual).toEqual('Ervin Howell');
+    it("gets user 2's name", () => {
+        const namePromise = getUserName(2);
+        const assertionPromise = namePromise.then((actual) => {
+            expect(actual).toEqual('Ervin Howell');
+        });
+        return assertionPromise;
     });
-    return assertionPromise;
-  });
-  it("gets user 3's name", () => {
-    const assertionPromise = getUserName(3).then((actual) => {
-      expect(actual).toEqual('Clementine Bauch');
+    it("gets user 3's name", () => {
+        const assertionPromise = getUserName(3).then((actual) => {
+            expect(actual).toEqual('Clementine Bauch');
+        });
+        return assertionPromise;
     });
-    return assertionPromise;
-  });
-  it("gets user 4's name", () => {
-    return getUserName(4).then((actual) => {
-      expect(actual).toEqual('Patricia Lebsack');
+    it("gets user 4's name", () => {
+        return getUserName(4).then((actual) => {
+            expect(actual).toEqual('Patricia Lebsack');
+        });
     });
-  });
-  it("gets user 5's name", () => {
-    return getUserName(5).then((actual) =>
-      expect(actual).toEqual('Chelsey Dietrich'),
-    );
-  });
-  it("gets user 6's name", () =>
-    getUserName(6).then((actual) =>
-      expect(actual).toEqual('Mrs. Dennis Schulist'),
-    ));
+    it("gets user 5's name", () => {
+        return getUserName(5).then((actual) =>
+            expect(actual).toEqual('Chelsey Dietrich'),
+        );
+    });
+    it("gets user 6's name", () =>
+        getUserName(6).then((actual) =>
+            expect(actual).toEqual('Mrs. Dennis Schulist'),
+        ));
 });
 
 log('= = = =  the call stack is empty  = = = =');

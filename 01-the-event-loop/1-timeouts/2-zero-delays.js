@@ -3,14 +3,14 @@
 //  the task will be executed after the event loop is clear
 
 const callback1 = () => {
-  console.log('executing callback 1');
+    console.log('executing callback 1');
 };
 
 console.log('scheduling timeout 1');
 setTimeout(callback1, 0);
 
 const callback2 = () => {
-  console.log('executing callback 2');
+    console.log('executing callback 2');
 };
 
 console.log('scheduling timeout 2');

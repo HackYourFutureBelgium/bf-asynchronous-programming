@@ -10,28 +10,28 @@ const { log, error } = labeledLogger();
 */
 
 const main = async () => {
-  try {
-    const responsePromises = [
-      fetchUserById(1),
-      fetchUserById(2),
-      fetchUserById(3),
-      fetchUserById(4),
-    ];
+    try {
+        const responsePromises = [
+            fetchUserById(1),
+            fetchUserById(2),
+            fetchUserById(3),
+            fetchUserById(4),
+        ];
 
-    // await the responses
-    const userPromises = await Promise.all(responsePromises);
-    log('user promises:', userPromises);
+        // await the responses
+        const userPromises = await Promise.all(responsePromises);
+        log('user promises:', userPromises);
 
-    // await a promise that waits for all users to resolve
-    const users = await Promise.all(userPromises);
-    log('users:', users);
+        // await a promise that waits for all users to resolve
+        const users = await Promise.all(userPromises);
+        log('users:', users);
 
-    // create an array with only the users' names
-    const names = users.map((user) => `${user.id}. ${user.name}`);
-    log('names:', names);
-  } catch (err) {
-    error(err);
-  }
+        // create an array with only the users' names
+        const names = users.map((user) => `${user.id}. ${user.name}`);
+        log('names:', names);
+    } catch (err) {
+        error(err);
+    }
 };
 
 main();

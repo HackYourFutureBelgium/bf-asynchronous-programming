@@ -25,19 +25,19 @@ const { log } = labeledLogger();
 */
 
 const logReturn = (value) => {
-  log(value);
-  return value;
+    log(value);
+    return value;
 };
 const logResolved = (value) => {
-  log(value);
+    log(value);
 };
 
 new Promise((resolve) => {
-  log('in executor'); // 1
-  resolve('success!');
+    log('in executor'); // 1
+    resolve('success!');
 })
-  .then(logReturn) // 3
-  .then(logReturn) // 4
-  .then(logResolved); // 5
+    .then(logReturn) // 3
+    .then(logReturn) // 4
+    .then(logResolved); // 5
 
 log('= = = =  the call stack is empty  = = = ='); // 2

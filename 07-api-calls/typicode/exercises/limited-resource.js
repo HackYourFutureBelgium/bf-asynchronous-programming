@@ -11,24 +11,24 @@ import { ORIGIN } from '../config.js';
  * @throws {Error} HTTP error! status: {number}.
  */
 export const limitedResource = async (resourceType = '', limit = 1) => {
-  // --- generate and declare your resource's URL ---
-  const URL = _;
+    // --- generate and declare your resource's URL ---
+    const URL = _;
 
-  // --- fetch the API data (this works!) ---
-  const encodedURL = encodeURI(URL);
-  const response = await fetch(encodedURL);
+    // --- fetch the API data (this works!) ---
+    const encodedURL = encodeURI(URL);
+    const response = await fetch(encodedURL);
 
-  // --- throw an error if the response is not ok (this works!) ---
-  if (!response.ok) {
-    const message = response.statusText
-      ? `${response.status}: ${response.statusText}\n-> ${URL}`
-      : `HTTP error! status: ${response.status}\n-> ${URL}`;
-    throw new Error(message);
-  }
+    // --- throw an error if the response is not ok (this works!) ---
+    if (!response.ok) {
+        const message = response.statusText
+            ? `${response.status}: ${response.statusText}\n-> ${URL}`
+            : `HTTP error! status: ${response.status}\n-> ${URL}`;
+        throw new Error(message);
+    }
 
-  /* --- parse the data if the response was ok (this works!) ---*/
-  const data = await response.json();
+    /* --- parse the data if the response was ok (this works!) ---*/
+    const data = await response.json();
 
-  // --- return the final data ---
-  return data;
+    // --- return the final data ---
+    return data;
 };

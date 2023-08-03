@@ -25,26 +25,26 @@ const getUserName = (id = 1) => fetchUserById(id).then((user) => user.name);
 // --- test the function  ---
 
 describe("getUserName: returns a user's name", () => {
-  it("gets user 2's name", () => {
-    return getUserName(2).then((actual) => {
-      expect(actual).toEqual('Ervin Howell');
+    it("gets user 2's name", () => {
+        return getUserName(2).then((actual) => {
+            expect(actual).toEqual('Ervin Howell');
+        });
     });
-  });
-  it("gets user 3's name", () => {
-    return getUserName(3).then((actual) => {
-      expect(actual).toEqual('Clementine Bauch');
+    it("gets user 3's name", () => {
+        return getUserName(3).then((actual) => {
+            expect(actual).toEqual('Clementine Bauch');
+        });
     });
-  });
-  it("gets user 4's name", () => {
-    return getUserName(4).then((actual) => {
-      expect(actual).toEqual('Patricia Lebsack');
+    it("gets user 4's name", () => {
+        return getUserName(4).then((actual) => {
+            expect(actual).toEqual('Patricia Lebsack');
+        });
     });
-  });
-  it("gets user 8's name", () => {
-    return getUserName(8).then((actual) => {
-      expect(actual).toEqual('Nicholas Runolfsdottir V');
+    it("gets user 8's name", () => {
+        return getUserName(8).then((actual) => {
+            expect(actual).toEqual('Nicholas Runolfsdottir V');
+        });
     });
-  });
 });
 
 log('= = = =  the call stack is empty  = = = =');

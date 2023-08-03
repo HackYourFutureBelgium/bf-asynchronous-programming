@@ -11,14 +11,14 @@ const { log } = labeledLogger();
 //  it will clear all intervals and timeouts
 
 const callback1 = () => {
-  log('hello from interval 1');
+    log('hello from interval 1');
 };
 setInterval(callback1, 500);
 
 log('scheduled interval 1');
 
 const callback2 = () => {
-  log('bonjour from interval 2');
+    log('bonjour from interval 2');
 };
 setInterval(callback2, 1000);
 

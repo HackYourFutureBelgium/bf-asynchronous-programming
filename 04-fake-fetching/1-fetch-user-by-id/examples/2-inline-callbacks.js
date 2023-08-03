@@ -13,17 +13,17 @@ const { log, error } = labeledLogger();
 
 log('fetching user 1');
 fetchUserById(1)
-  .then((user) => log(user))
-  .catch((err) => error(err));
+    .then((user) => log(user))
+    .catch((err) => error(err));
 
 log('fetching user 5');
 fetchUserById(5)
-  .then((user) => log(user))
-  .catch((err) => error(err));
+    .then((user) => log(user))
+    .catch((err) => error(err));
 
 log('fetching user 10');
 fetchUserById(10)
-  .then((user) => log(user))
-  .catch((err) => error(err));
+    .then((user) => log(user))
+    .catch((err) => error(err));
 
 log('= = = =  the call stack is empty  = = = =');

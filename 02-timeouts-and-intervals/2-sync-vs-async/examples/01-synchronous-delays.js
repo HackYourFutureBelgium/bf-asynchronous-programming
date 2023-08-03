@@ -24,19 +24,19 @@ const { log } = labeledLogger();
 */
 
 const callback1 = () => {
-  log('- end synchronous 1000 ms');
+    log('- end synchronous 1000 ms');
 };
 log('- begin synchronous 1000 ms');
 synchronousTimeout(callback1, 1000);
 
 const callback2 = () => {
-  log('- end synchronous 500 ms');
+    log('- end synchronous 500 ms');
 };
 log('- begin synchronous 500 ms');
 synchronousTimeout(callback2, 500);
 
 const callback3 = () => {
-  log('- end synchronous 0 ms');
+    log('- end synchronous 0 ms');
 };
 log('- begin synchronous 0 ms');
 synchronousTimeout(callback3, 0);

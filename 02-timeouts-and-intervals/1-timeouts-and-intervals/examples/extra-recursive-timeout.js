@@ -8,15 +8,15 @@ const delay = 500;
 const totalSteps = 10;
 
 const callback = (currentStep) => {
-  log('step ', currentStep);
-  if (currentStep === 0) {
-    // base case
-    clearTimeout(timeoutId);
-  } else {
-    // recursive case
-    const nextStep = currentStep - 1;
-    timeoutId = setTimeout(callback, delay, nextStep);
-  }
+    log('step ', currentStep);
+    if (currentStep === 0) {
+        // base case
+        clearTimeout(timeoutId);
+    } else {
+        // recursive case
+        const nextStep = currentStep - 1;
+        timeoutId = setTimeout(callback, delay, nextStep);
+    }
 };
 let timeoutId = setTimeout(callback, delay, totalSteps);
 log('scheduled timeout', timeoutId);

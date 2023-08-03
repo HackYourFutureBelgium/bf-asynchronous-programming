@@ -21,37 +21,37 @@ const { log } = labeledLogger();
  * @throws {Error} {status number}: {status text}
  */
 const getUserName = (id = 1) => {
-  log('fetching user ' + id);
+    log('fetching user ' + id);
 
-  return fetchUserById(id).then((user) => {
-    log(`user ${id}:`, user);
-    return user.name;
-  });
+    return fetchUserById(id).then((user) => {
+        log(`user ${id}:`, user);
+        return user.name;
+    });
 };
 
 // --- test the function ---
 
 describe("getUserName: returns a user's name", () => {
-  it("gets user 2's name", () => {
-    return getUserName(2).then((actual) => {
-      expect(actual).toEqual('Ervin Howell');
+    it("gets user 2's name", () => {
+        return getUserName(2).then((actual) => {
+            expect(actual).toEqual('Ervin Howell');
+        });
     });
-  });
-  it("gets user 3's name", () => {
-    return getUserName(3).then((actual) => {
-      expect(actual).toEqual('Clementine Bauch');
+    it("gets user 3's name", () => {
+        return getUserName(3).then((actual) => {
+            expect(actual).toEqual('Clementine Bauch');
+        });
     });
-  });
-  it("gets user 4's name", () => {
-    return getUserName(4).then((actual) => {
-      expect(actual).toEqual('Patricia Lebsack');
+    it("gets user 4's name", () => {
+        return getUserName(4).then((actual) => {
+            expect(actual).toEqual('Patricia Lebsack');
+        });
     });
-  });
-  it("gets user 8's name", () => {
-    return getUserName(8).then((actual) => {
-      expect(actual).toEqual('Nicholas Runolfsdottir V');
+    it("gets user 8's name", () => {
+        return getUserName(8).then((actual) => {
+            expect(actual).toEqual('Nicholas Runolfsdottir V');
+        });
     });
-  });
 });
 
 log('= = = =  the call stack is empty  = = = =');

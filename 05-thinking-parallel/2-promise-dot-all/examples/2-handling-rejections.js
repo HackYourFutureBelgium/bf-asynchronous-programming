@@ -12,20 +12,20 @@ const { log, error } = labeledLogger();
 */
 
 const responsePromises = [
-  fetchUserById(1),
-  fetchUserById(2),
-  fetchUserById(3),
-  fetchUserById(4),
+    fetchUserById(1),
+    fetchUserById(2),
+    fetchUserById(3),
+    fetchUserById(4),
 ];
 
 Promise.all(responsePromises)
-  .then((users) => {
-    log('users:', users);
-    // create an array with only the users' names
-    const names = users.map((user) => `${user.id}. ${user.name}`);
-    log('names:', names);
-  })
-  // handle a network error
-  .catch(error);
+    .then((users) => {
+        log('users:', users);
+        // create an array with only the users' names
+        const names = users.map((user) => `${user.id}. ${user.name}`);
+        log('names:', names);
+    })
+    // handle a network error
+    .catch(error);
 
 log('=== === === the callstack is empty === === ===');

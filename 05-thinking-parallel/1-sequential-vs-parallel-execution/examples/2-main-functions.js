@@ -19,8 +19,8 @@ const slowString = delayedValue(log);
 */
 
 const main = async () => {
-  const hello = await slowString('hello!');
-  log(hello);
+    const hello = await slowString('hello!');
+    log(hello);
 };
 
 main();

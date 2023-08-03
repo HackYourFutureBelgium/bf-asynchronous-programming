@@ -12,22 +12,22 @@ const { log, error } = labeledLogger();
 
 // resolve/reject based on user input with if/else
 new Promise((resolve, reject) => {
-  const userInput = prompt('enter a number');
-  const userNumber = Number(userInput);
-  const isANumber =
-    userInput !== '' && userInput !== null && !Number.isNaN(userNumber);
+    const userInput = prompt('enter a number');
+    const userNumber = Number(userInput);
+    const isANumber =
+        userInput !== '' && userInput !== null && !Number.isNaN(userNumber);
 
-  if (isANumber) {
-    resolve('you entered the number: ' + userNumber);
-  } else {
-    reject('is not a number: ' + userInput);
-  }
+    if (isANumber) {
+        resolve('you entered the number: ' + userNumber);
+    } else {
+        reject('is not a number: ' + userInput);
+    }
 })
-  .then((resolvedValue) => {
-    log('resolved value: ', resolvedValue);
-  })
-  .catch((rejectionValue) => {
-    error('rejected value: ', rejectionValue);
-  });
+    .then((resolvedValue) => {
+        log('resolved value: ', resolvedValue);
+    })
+    .catch((rejectionValue) => {
+        error('rejected value: ', rejectionValue);
+    });
 
 log('= = = =  the call stack is empty  = = = =');

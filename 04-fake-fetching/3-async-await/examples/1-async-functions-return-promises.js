@@ -21,9 +21,9 @@ const { log } = labeledLogger();
  * @returns {Promise<any>}
  */
 const wrapInPromise = async (value) => {
-  debugger;
-  // the return value is a promise, you can see this in the debugger
-  return value;
+    debugger;
+    // the return value is a promise, you can see this in the debugger
+    return value;
 };
 
 // --- test the async function ---

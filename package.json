@@ -1,0 +1,29 @@
+{
+  "name": "asynchronous-programming",
+  "version": "1.0.0",
+  "description": "the Async module for HYF Belgium",
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/.bin/jest --silent ",
+    "format": "prettier --write ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HackYourFutureBelgium/asynchronous-programming.git"
+  },
+  "author": "",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "bugs": {
+    "url": "https://github.com/HackYourFutureBelgium/asynchronous-programming/issues"
+  },
+  "homepage": "https://github.com/HackYourFutureBelgium/asynchronous-programming#readme",
+  "devDependencies": {
+    "dependency-cruiser": "^10.0.6",
+    "graphviz-cli": "^1.0.0",
+    "jest": "^27.0.4",
+    "prettier": "^2.3.2"
+  },
+  "jest": {
+    "verbose": true
+  }
+}

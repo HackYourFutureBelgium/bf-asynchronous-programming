@@ -1,0 +1,12 @@
+{
+  "--port": 4009,
+  "study": {
+    "table": true,
+    "run": true,
+    "debug": true,
+    "save": true,
+    "environment": true,
+    "type": "module",
+    "tests": [".spec.js", ".test.js"]
+  }
+}

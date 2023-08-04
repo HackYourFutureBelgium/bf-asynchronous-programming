@@ -4,7 +4,7 @@
   "description": "the Async module for HYF Belgium",
   "type": "module",
   "scripts": {
-    "test": "node --experimental-vm-modules node_modules/.bin/jest --silent ",
+    "test": "jest",
     "format": "prettier --write ./"
   },
   "repository": {
@@ -20,7 +20,9 @@
   "devDependencies": {
     "dependency-cruiser": "^10.0.6",
     "graphviz-cli": "^1.0.0",
-    "jest": "^27.0.4",
+    "@babel/plugin-transform-modules-commonjs": "^7.22.5",
+    "jest": "^29.6.1",
+    "jest-environment-jsdom": "^29.6.1",
     "prettier": "^2.3.2"
   },
   "jest": {

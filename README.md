@@ -16,7 +16,6 @@ Enter _asynchronous programming_: writing code that tells your browser to start 
 
 - [Learning Objectives](#learning-objectives): what you can expect to learn from
   studying this material
-- [Setting Up](#setting-up): how to set up and study this material
 - [Suggested Study](./suggested-study.md): Helpful links for this module, useful
   but not required.
 

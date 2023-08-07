@@ -4,4 +4,3 @@
 - promise-restaurant
 - api-calls
 - fetch-and-render
-

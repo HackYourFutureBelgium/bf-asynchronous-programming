@@ -62,4 +62,7 @@ You can also run tests directly from CLI using the NPM script:
 
 ### Week3
 
+- [day 11](https://youtu.be/hiTCoXBV92k)
+- [day 12](https://youtu.be/7szN9J-5mLc)
+
 </details>

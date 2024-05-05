@@ -4,7 +4,7 @@
   "description": "the Async module for HYF Belgium",
   "type": "module",
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
     "format": "prettier --write ./"
   },
   "repository": {
@@ -18,9 +18,9 @@
   },
   "homepage": "https://github.com/HackYourFutureBelgium/asynchronous-programming#readme",
   "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.22.5",
     "dependency-cruiser": "^10.0.6",
     "graphviz-cli": "^1.0.0",
-    "@babel/plugin-transform-modules-commonjs": "^7.22.5",
     "jest": "^29.6.1",
     "jest-environment-jsdom": "^29.6.1",
     "prettier": "^2.3.2"

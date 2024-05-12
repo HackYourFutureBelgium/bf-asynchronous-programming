@@ -9,7 +9,7 @@ const { log } = labeledLogger();
 const callback1 = () => {
     // this one never happens!
     log('in callback 1');
-    clearTimeout(timeout2);
+    clearTimeout(timeout2); // non puo' essere eseguita! perché la funzione call back2 viene eseguita per prima e al suo interno vi é chearTimeout che arresta l'esecuzione di callback1
 };
 const timeout1 = setTimeout(callback1, 2000);
 
@@ -17,7 +17,7 @@ log('scheduled timeout 1', timeout1); // log 1
 
 const callback2 = () => {
     log('in callback 2'); // log 4
-    clearTimeout(timeout1);
+    clearTimeout(timeout1);     // clear the function  callback 1
 };
 const timeout2 = setTimeout(callback2, 1000);
 

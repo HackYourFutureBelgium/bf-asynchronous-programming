@@ -10,12 +10,14 @@ const callback1 = () => {
     log('executing callback 1'); // log 4
 };
 setTimeout(callback1, 0);
+
 log('scheduled timeout 1'); // log 1
 
 const callback2 = () => {
     log('executing callback 2'); // log 5
 };
 setTimeout(callback2, 0);
+
 log('scheduled timeout 2'); // log 2
 
 log('= = = =  the call stack is empty  = = = ='); // log 3

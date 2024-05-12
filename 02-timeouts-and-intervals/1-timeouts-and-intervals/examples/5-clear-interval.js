@@ -8,14 +8,14 @@ const { log } = labeledLogger();
 const callback1 = () => {
     log('interval ...');
 };
-const intervalId = setInterval(callback1, 500);
+const intervalId = setInterval(callback1, 500); // 1
 log('scheduled interval', intervalId);
 
-const callback2 = () => {
+const callback2 = () => {                   // 2
     log('timeout!');
     clearInterval(intervalId);
 };
-setTimeout(callback2, 3000);
+setTimeout(callback2, 3000);            // 4
 log('scheduled timeout');
 
-log('= = = =  the call stack is empty  = = = =');
+log('= = = =  the call stack is empty  = = = ='); // 3

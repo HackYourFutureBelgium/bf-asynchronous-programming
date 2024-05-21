@@ -27,5 +27,10 @@
   },
   "jest": {
     "verbose": true
+  },
+  "dependencies": {
+    "jquery": "^3.7.1",
+    "node-fetch": "^3.3.2",
+    "xhr2": "^0.2.1"
   }
 }

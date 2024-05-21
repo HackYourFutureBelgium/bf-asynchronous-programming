@@ -33,30 +33,11 @@ export const evolutionChain = async (chainId = 1) => {
         });
     };
     const result = await wrapper();
-    // --- fetch the API data (this works!) ---
-    // const encodedURL = encodeURI(URL);
-    // const response = await fetch(encodedURL);
 
-    // --- throw an error if the response is not ok (this works!) ---
-    // if (!response.ok) {
-    //     const message = response.statusText
-    //         ? `${response.status}: ${response.statusText}\n-> ${URL}`
-    //         : `HTTP error! status: ${response.status}\n-> ${URL}`;
-    //     throw new Error(message);
-    // }
-
-    /* --- parse the data if the response was ok (this works!) ---*/
-    // const data = JSON.parse(result);
-    // console.log(result);
-
-    // --- process the fetched data (if necessary) ---
-    //  you do not need to use `await` below this comment
-    //  you can refactor this to a separate logic function and test it
-    const pokemon = []; // tricky one!  you will need to push all the species into an array
+    const pokemon = [];
 
     let poke = result.chain;
     if (poke.species) {
-        // console.log(poke.species, poke.evolves_to, poke.evolves_to.length);
         pokemon.push(poke.species);
     }
     while (poke.evolves_to[0]) {

@@ -1,0 +1,46 @@
+.root {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.container {
+    margin: 40px;
+    min-width: 40vw;
+    max-width: 80vw;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.table-h {
+    padding: 20px;
+}
+
+.table-main {
+    display: flex;
+    flex-direction: column;
+}
+
+.table-head {
+    display: flex;
+    flex-direction: row;
+}
+
+.t-data {
+    margin-top: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+.head-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.btn-div {
+    display: flex;
+    flex-direction: column;
+}

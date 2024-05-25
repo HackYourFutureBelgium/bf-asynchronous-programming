@@ -1,27 +1,13 @@
-import { StarTrekApiService } from '../services/StarTrekApiServices.js';
-import { StarWarsApiService } from '../services/StarWarsApiService.js';
+import { renderContainer } from './renderContainer.js';
 
-export const renderPageBase = async () => {
+export const renderPageBase = () => {
+    document.body.innerHTML = '';
     const root = document.createElement('div');
     root.classList = 'root';
     root.id = 'root';
 
-    try {
-        // const spaceCraftsPromise = StarTrekApiService('spacecraft', 1, 100);
-        // const planetsPromise = StarTrekApiService('astronomicalObject', 1, 100);
-
-        const spaceCraftsPromise = StarWarsApiService('starships');
-        const peoplePromise = StarWarsApiService('people');
-        const planetsPromise = StarWarsApiService('planets');
-
-        const [ships, planets, people] = await Promise.all([
-            spaceCraftsPromise,
-            planetsPromise,
-            peoplePromise,
-        ]);
-
-        console.log(ships, planets, people);
-    } catch {}
+    const container = renderContainer();
+    root.appendChild(container);
 
     document.body.appendChild(root);
 };

@@ -17,6 +17,6 @@ export const StarTrekApiService = async (
     }
 
     const toReturn = await response.json();
-    console.log(toReturn);
+    // console.log(toReturn);
     return toReturn;
 };

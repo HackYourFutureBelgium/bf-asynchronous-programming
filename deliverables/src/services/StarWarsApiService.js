@@ -10,8 +10,12 @@ export const StarWarsApiService = async (field = '') => {
     const response = await fetch(encodedURL);
 
     if (!response.ok) {
-        console.log(response);
-        throw response;
+        console.log(
+            `ERROR: error with status code: ${response.status} with message: ${response.statusText} ocurred`,
+        );
+        throw new Error(
+            `ERROR: error with status code: ${response.status} with message: ${response.statusText} ocurred`,
+        );
     }
 
     const firstFetch = await response.json();
@@ -34,6 +38,6 @@ export const StarWarsApiService = async (field = '') => {
         dataToAdd.results.map((i) => toReturn.push(i));
     }
 
-    console.log(toReturn, firstFetch);
+    // console.log(toReturn, firstFetch);
     return toReturn;
 };

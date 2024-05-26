@@ -1,4 +1,5 @@
 import { apiService } from '../api-calls/apiService.js';
+import { renderPost } from '../components/renderPost.js';
 import { state } from '../data/state.js';
 
 export const userInputHandler = async (event) => {
@@ -14,13 +15,11 @@ export const userInputHandler = async (event) => {
             commentsPromise,
         ]);
 
-        state.post = post;
-        state.comments = comments;
-        console.log(state);
+        // state.post = post;
+        // state.comments = comments;
+        // console.log(state, post);
 
-        // const postElement = renderAlbum(album, photos);
-
-        // root.appendChild(albumElement);
+        renderPost(post, comments);
     } catch (err) {
         console.error(err);
     }

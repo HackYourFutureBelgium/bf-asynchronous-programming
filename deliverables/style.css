@@ -10,12 +10,9 @@
     max-width: 80vw;
 
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
-}
-
-.table-h {
-    padding: 20px;
+    align-items: center;
 }
 
 .table-main {
@@ -26,11 +23,13 @@
 .table-head {
     display: flex;
     flex-direction: row;
+    margin-bottom: 20px;
 }
 
 .t-data {
-    margin-top: 10px;
-    padding: 10px;
+    min-width: 200px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     text-align: center;
 }
 
@@ -43,4 +42,12 @@
 .btn-div {
     display: flex;
     flex-direction: column;
+}
+
+.input-div {
+    min-width: 160px;
+}
+
+.input {
+    max-width: 120px;
 }

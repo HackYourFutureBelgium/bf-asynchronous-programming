@@ -1,3 +1,4 @@
+import { filterHandler } from '../handlers/filterHandler.js';
 import { sortingHandler } from '../handlers/sortingHandler.js';
 
 export const renderHeadTab = (headName = '') => {
@@ -5,10 +6,20 @@ export const renderHeadTab = (headName = '') => {
     headEl.id = 'head-div';
     headEl.classList = 'head-div';
 
+    const inputDiv = document.createElement('div');
+    inputDiv.id = 'input-div';
+    inputDiv.classList = 'input-div';
+
     const tableHead = document.createElement('h4');
     tableHead.classList = 'table-h';
     tableHead.id = 'table-h';
     tableHead.innerHTML = headName;
+
+    const inputEl = document.createElement('input');
+    inputEl.id = `input-${headName.replace(/ +/g, '').toLowerCase()}`;
+    inputEl.classList = 'input';
+
+    inputEl.addEventListener('keyup', filterHandler);
 
     const btnDiv = document.createElement('div');
     btnDiv.classList = 'btn-div';
@@ -36,8 +47,11 @@ export const renderHeadTab = (headName = '') => {
     btnDiv.appendChild(ascendButton);
     btnDiv.appendChild(descButton);
 
+    inputDiv.appendChild(tableHead);
+    inputDiv.appendChild(inputEl);
+
     headEl.appendChild(btnDiv);
-    headEl.appendChild(tableHead);
+    headEl.appendChild(inputDiv);
 
     return headEl;
 };

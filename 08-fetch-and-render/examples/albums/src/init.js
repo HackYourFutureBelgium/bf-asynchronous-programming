@@ -1,5 +1,5 @@
 import { fetchAndRenderAlbum } from './listeners/fetch-and-render-album.js';
 
-debugger;
+// debugger;
 
 fetchAndRenderAlbum('choose-album-button');

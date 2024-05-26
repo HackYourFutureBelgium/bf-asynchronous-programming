@@ -12,6 +12,7 @@ import XMLHttpRequest from 'xhr2';
  */
 export const pokemonWithAbility = async (ability = '') => {
     const URL = `${ORIGIN}/ability/${ability}`;
+
     const reportError = (error) => {
         const message = error.statusText
             ? `${error.status}: ${error.statusText}\n-> ${URL}`

@@ -2,9 +2,8 @@ export const state = {
     itemsToRender: [],
     renderRequest: {
         sort: {
-            name: '',
-            height: '',
-            birthYear: '',
+            field: '',
+            type: '',
         },
         filter: {
             name: '',

@@ -1,4 +1,4 @@
-import { filterHandler } from '../handlers/filterHandler.js';
+import { renderFilterSection } from './renderFilterSection.js';
 import { renderTable } from './renderTable.js';
 
 export const renderContainer = () => {
@@ -6,22 +6,15 @@ export const renderContainer = () => {
     containerToReturn.classList = 'container';
     containerToReturn.id = 'container';
 
-    const filterSection = document.createElement('div');
-    filterSection.classList = 'filter-section';
-    filterSection.id = 'filter-section';
+    const header = document.createElement('h2');
+    header.id = 'header';
+    header.classList = 'header';
+    header.innerHTML = 'Data Organizer :';
 
-    const filterButton = document.createElement('button');
-    filterButton.classList = 'filter-btn';
-    filterButton.id = 'filter-btn';
-    filterButton.type = 'button';
-    filterButton.innerHTML = 'Filter';
-
-    filterButton.addEventListener('click', filterHandler);
-
-    filterSection.appendChild(filterButton);
-
+    const filterSection = renderFilterSection();
     const table = renderTable();
 
+    containerToReturn.appendChild(header);
     containerToReturn.appendChild(filterSection);
     containerToReturn.appendChild(table);
 

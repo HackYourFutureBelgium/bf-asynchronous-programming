@@ -20,9 +20,6 @@ export const itemSorter = () => {
         );
     }
 
-    if (state.renderRequest.sort.type === 'dsc') {
-        state.itemsToRender = state.itemsToRender.map(state.itemsToRender.pop, [
-            ...state.itemsToRender,
-        ]);
-    }
+    if (state.renderRequest.sort.type === 'dsc')
+        state.itemsToRender = state.itemsToRender.reverse();
 };

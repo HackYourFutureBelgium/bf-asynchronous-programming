@@ -18,7 +18,6 @@ export const clearFilterHandler = () => {
     state.itemsToRender = data.items;
 
     itemSorter();
-
     // console.log(state.renderRequest.filter);
     renderPageBase();
 };

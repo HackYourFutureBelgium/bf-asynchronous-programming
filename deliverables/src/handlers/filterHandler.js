@@ -1,4 +1,5 @@
 import { state } from '../../data/state.js';
+import { renderPageBase } from '../components/renderPageBase.js';
 import { clearFilterHandler } from './clearFilterHandler.js';
 
 export const filterHandler = (event) => {
@@ -17,4 +18,5 @@ export const filterHandler = (event) => {
         document.getElementById('input-birthyear').value;
 
     console.log(state.renderRequest.filter);
+    renderPageBase();
 };

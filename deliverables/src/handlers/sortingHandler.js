@@ -7,6 +7,8 @@ export const sortingHandler = async (event) => {
         state.renderRequest.sort.field = event.target.classList[1];
         state.renderRequest.sort.type = event.target.classList[0].split('-')[0];
     }
+
     itemSorter();
+
     renderPageBase();
 };

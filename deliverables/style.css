@@ -51,9 +51,14 @@
 
 .t-data {
     min-width: 200px;
-    padding-top: 10px;
     padding-bottom: 10px;
+    padding-top: 10px;
     text-align: center;
+}
+.t-no-data {
+    padding-top: 10px;
+    text-align: center;
+    min-width: 600px;
 }
 
 .head-div {

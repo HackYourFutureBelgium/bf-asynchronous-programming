@@ -19,6 +19,21 @@ export const renderTable = () => {
     table.appendChild(tableHeader);
     table.appendChild(tableBody);
 
+    if (state.itemsToRender.length === 0) {
+        let tableRow = document.createElement('tr');
+        tableRow.classList = 't-row';
+        tableRow.id = 't-row';
+
+        const tableData = document.createElement('td');
+        tableData.classList = 't-no-data';
+        tableData.id = 't-no-data';
+        tableData.colSpan = '3';
+        tableData.innerHTML = `No values found .`;
+
+        tableRow.appendChild(tableData);
+        tableBody.appendChild(tableRow);
+    }
+
     state.itemsToRender.map((item, i) => {
         let tableRow = document.createElement('tr');
         tableRow.classList = 't-row';

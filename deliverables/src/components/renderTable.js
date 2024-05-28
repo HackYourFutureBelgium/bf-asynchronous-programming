@@ -2,6 +2,10 @@ import { state } from '../../data/state.js';
 import { renderTableHead } from './renderTableHead.js';
 
 export const renderTable = () => {
+    const tableSection = document.createElement('div');
+    tableSection.id = 'table-section';
+    tableSection.classList = 'table-section';
+
     const table = document.createElement('table');
     table.id = 'table-main';
     table.classList = 'table-main';
@@ -42,5 +46,7 @@ export const renderTable = () => {
         tableBody.appendChild(tableRow);
     });
 
-    return table;
+    tableSection.appendChild(table);
+
+    return tableSection;
 };

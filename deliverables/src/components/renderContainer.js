@@ -1,4 +1,5 @@
 import { renderFilterSection } from './renderFilterSection.js';
+import { renderPaginator } from './renderPaginator.js';
 import { renderTable } from './renderTable.js';
 
 export const renderContainer = () => {
@@ -12,11 +13,13 @@ export const renderContainer = () => {
     header.innerHTML = 'Data Organizer :';
 
     const filterSection = renderFilterSection();
-    const table = renderTable();
+    const tableSection = renderTable();
+    const paginatorSection = renderPaginator();
 
     containerToReturn.appendChild(header);
     containerToReturn.appendChild(filterSection);
-    containerToReturn.appendChild(table);
+    containerToReturn.appendChild(tableSection);
+    containerToReturn.appendChild(paginatorSection);
 
     return containerToReturn;
 };

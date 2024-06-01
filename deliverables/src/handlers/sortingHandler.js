@@ -2,7 +2,6 @@ import { state } from '../../data/state.js';
 import { getData } from '../utils/setState.js';
 
 export const sortingHandler = async (event) => {
-    console.log(event.target.classList);
     if (event.type === 'click') {
         if (event.target.classList[1] === 'birthyear') {
             state.renderRequest.sort.field = 'born';

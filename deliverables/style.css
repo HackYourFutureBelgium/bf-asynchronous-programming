@@ -19,6 +19,7 @@
 
 .table-section {
     height: 60vh;
+    max-width: 620px;
     margin-bottom: 20px;
     padding: 12px;
     border: 1px solid black;
@@ -36,6 +37,7 @@
     flex-direction: row;
     position: fixed;
     background-color: white;
+    width: 620px;
     top: 200px;
     height: 100px;
     margin-top: -20px;

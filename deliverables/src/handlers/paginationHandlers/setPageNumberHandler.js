@@ -1,5 +1,5 @@
 import { state } from '../../../data/state.js';
-import { renderPageBase } from '../../components/renderPageBase.js';
+import { getData } from '../../utils/setState.js';
 
 export const setPageNumberHandler = (event) => {
     const valueArray = event.target.id.split('-');
@@ -19,5 +19,5 @@ export const setPageNumberHandler = (event) => {
         state.renderRequest.pagination.currentPage = Number(valueArray[2]);
     }
 
-    renderPageBase();
+    getData();
 };

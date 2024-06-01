@@ -47,12 +47,12 @@ export const renderTable = () => {
         const tableDataHeight = document.createElement('td');
         tableDataHeight.classList = 't-data';
         tableDataHeight.id = 't-data';
-        tableDataHeight.innerHTML = `${item.height}`;
+        tableDataHeight.innerHTML = `${item.nationality}`;
 
         const tableDataYear = document.createElement('td');
         tableDataYear.classList = 't-data';
         tableDataYear.id = 't-data';
-        tableDataYear.innerHTML = `${item.birth_year}`;
+        tableDataYear.innerHTML = `${item.birthYear}`;
 
         tableRow.appendChild(tableDataName);
         tableRow.appendChild(tableDataHeight);

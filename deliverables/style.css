@@ -13,10 +13,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: fixed;
+    top: -1;
 }
 
 .table-section {
-    height: 600px;
+    height: 60vh;
     margin-bottom: 20px;
     padding: 12px;
     border: 1px solid black;
@@ -27,16 +29,14 @@
 .table-main {
     display: flex;
     flex-direction: column;
-    position: sticky;
-    top: 0;
 }
 
 .table-head {
     display: flex;
     flex-direction: row;
     position: fixed;
-    top: 200px;
     background-color: white;
+    top: 200px;
     height: 100px;
     margin-top: -20px;
     padding-bottom: 20px;
@@ -94,6 +94,8 @@
     border: 1px black solid;
     border-radius: 6px;
     background-color: white;
+    position: relative;
+    bottom: 10px;
 }
 
 .paginator-section {

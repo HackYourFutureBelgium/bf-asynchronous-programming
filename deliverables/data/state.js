@@ -7,7 +7,7 @@ export const state = {
         },
         filter: {
             name: '',
-            height: '',
+            nationality: '',
             birthYear: '',
         },
         pagination: {

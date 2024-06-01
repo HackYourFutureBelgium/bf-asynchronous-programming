@@ -10,7 +10,7 @@ export const renderTableHead = () => {
     tableHead.id = 'table-head';
 
     const tableHeadName = renderHeadTab('Name');
-    const tableHeadHeight = renderHeadTab('Height');
+    const tableHeadHeight = renderHeadTab('Nationality');
     const tableHeadBirthYear = renderHeadTab('Birth Year');
 
     tableHead.appendChild(tableHeadName);

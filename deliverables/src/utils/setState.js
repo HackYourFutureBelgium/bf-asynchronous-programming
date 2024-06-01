@@ -1,33 +1,33 @@
-// import { StarTrekApiService } from '../services/StarTrekApiServices.js';
-import { StarWarsApiService } from '../services/StarWarsApiService.js';
-import { data } from '../../data/data.js';
 import { state } from '../../data/state.js';
+import { renderPageBase } from '../components/renderPageBase.js';
+import { apiService } from '../services/apiService.js';
 
 export const getData = async () => {
     try {
-        // const spaceCraftsPromise = StarTrekApiService('spacecraft', 1, 100);
-        // const planetsPromise = StarTrekApiService('astronomicalObject', 1, 100);
+        const charactersPromise = apiService();
+        const [characters] = await Promise.all([charactersPromise]);
 
-        // const spaceCraftsPromise = StarWarsApiService('starships');
-        const peoplePromise = StarWarsApiService('people');
-        // const planetsPromise = StarWarsApiService('planets');
+        state.itemsToRender = [];
+        characters.data.map((item) =>
+            state.itemsToRender.push({
+                name: item.attributes.name,
+                nationality: item.attributes.nationality,
+                birthYear: item.attributes.born,
+            }),
+        );
 
-        const [
-            // ships,
-            // planets,
-            people,
-        ] = await Promise.all([
-            // spaceCraftsPromise,
-            // planetsPromise,
-            peoplePromise,
-        ]);
-
-        data.items = people;
-        state.itemsToRender = people;
-        state.renderRequest.pagination.totalItems = people.length;
-        state.renderRequest.pagination.totalPages =
-            people.length / state.renderRequest.pagination.pageSize;
-        console.log(data.items);
+        state.renderRequest.pagination.totalItems =
+            characters.meta.pagination.records;
+        if (characters.meta.pagination.last != undefined) {
+            state.renderRequest.pagination.totalPages =
+                characters.meta.pagination.last;
+        } else {
+            state.renderRequest.pagination.totalPages = Math.ceil(
+                characters.meta.pagination.records /
+                    state.renderRequest.pagination.pageSize,
+            );
+        }
+        renderPageBase();
     } catch (error) {
         console.log(error);
     }

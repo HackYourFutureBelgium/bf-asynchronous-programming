@@ -1,5 +1,5 @@
 import { state } from '../../data/state.js';
-import { filterHandler } from '../handlers/filterHandler.js';
+import { filterHandler } from '../handlers/filterHandlers/filterHandler.js';
 import { sortingHandler } from '../handlers/sortingHandler.js';
 
 export const renderHeadTab = (headName = '') => {

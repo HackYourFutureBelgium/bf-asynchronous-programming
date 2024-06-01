@@ -1,5 +1,5 @@
-import { clearFilterHandler } from '../handlers/clearFilterHandler.js';
-import { filterHandler } from '../handlers/filterHandler.js';
+import { clearFilterHandler } from '../handlers/filterHandlers/clearFilterHandler.js';
+import { filterHandler } from '../handlers/filterHandlers/filterHandler.js';
 
 export const renderFilterSection = () => {
     const filterSection = document.createElement('div');

@@ -35,7 +35,7 @@
     display: flex;
     flex-direction: row;
     position: fixed;
-    top: 1;
+    top: 200px;
     background-color: white;
     height: 100px;
     margin-top: -20px;
@@ -105,8 +105,7 @@
 
 .total-section {
     border-right: black 1px solid;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    max-height: 80px;
     padding-right: 20px;
 }
 
@@ -115,4 +114,28 @@
     padding-top: 30px;
     padding-bottom: 30px;
     padding-left: 20px;
+}
+
+.btn-dis {
+    color: rgb(160, 159, 159);
+    pointer-events: none;
+    margin: 2px;
+}
+
+.pag-btn-sec {
+    display: flex;
+    flex-direction: row;
+}
+
+.pag-num-sec {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.btn-order {
+    margin: 2px;
+}
+
+.num-btn {
+    margin: 2px;
 }

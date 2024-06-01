@@ -1,8 +1,17 @@
 import { state } from '../../data/state.js';
+// import { data } from '../../data/data.js';
 import { renderContainer } from './renderContainer.js';
+import { itemSorter } from '../logic/sorters/itemSorter.js';
+import { filterItems } from '../logic/filters/filterItems.js';
+import { paginateItems } from '../logic/paginateItems.js';
 
 export const renderPageBase = () => {
     document.body.innerHTML = '';
+
+    filterItems();
+    itemSorter();
+    paginateItems();
+
     const root = document.createElement('div');
     root.classList = 'root';
     root.id = 'root';

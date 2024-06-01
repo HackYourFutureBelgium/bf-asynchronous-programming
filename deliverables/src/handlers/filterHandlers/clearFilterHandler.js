@@ -1,7 +1,6 @@
-import { state } from '../../data/state.js';
-import { data } from '../../data/data.js';
-import { renderPageBase } from '../components/renderPageBase.js';
-import { itemSorter } from '../logic/sorters/itemSorter.js';
+import { state } from '../../../data/state.js';
+import { data } from '../../../data/data.js';
+import { renderPageBase } from '../../components/renderPageBase.js';
 
 export const clearFilterHandler = () => {
     document.getElementById('input-name').value = '';
@@ -16,8 +15,7 @@ export const clearFilterHandler = () => {
         document.getElementById('input-birthyear').value;
 
     state.itemsToRender = data.items;
+    state.renderRequest.pagination.currentPage = 1;
 
-    itemSorter();
-    // console.log(state.renderRequest.filter);
     renderPageBase();
 };

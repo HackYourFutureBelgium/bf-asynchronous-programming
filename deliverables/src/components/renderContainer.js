@@ -1,5 +1,5 @@
 import { renderFilterSection } from './renderFilterSection.js';
-import { renderPaginator } from './renderPaginator.js';
+import { renderPaginator } from './paginator/renderPaginator.js';
 import { renderTable } from './renderTable.js';
 
 export const renderContainer = () => {

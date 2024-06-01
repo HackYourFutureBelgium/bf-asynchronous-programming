@@ -24,6 +24,9 @@ export const getData = async () => {
 
         data.items = people;
         state.itemsToRender = people;
+        state.renderRequest.pagination.totalItems = people.length;
+        state.renderRequest.pagination.totalPages =
+            people.length / state.renderRequest.pagination.pageSize;
         console.log(data.items);
     } catch (error) {
         console.log(error);

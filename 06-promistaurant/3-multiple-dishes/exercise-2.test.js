@@ -35,9 +35,60 @@ import {
  *  Complete the following code so that the test passes
  */
 
-_;
+const preparedExtrasLinda = Promise.all(
+    [extras.egg, extras.redPeppers, extras.onion].map((e) => prepareExtra(e))
+);
 
-const theOrder = _;
+const preparedExtrasMonica = prepareExtra(extras.pineapple);
+
+const preparedExtrasOlivia = Promise.all(
+    [extras.egg, extras.mushrooms, extras.pineapple, extras.broccoli].map((e) =>
+        prepareExtra(e)
+    )
+);
+
+const lindasOrder = Promise.all([
+    preparePortion(sizes.small, bases.riceNoodles)
+        .then((meal) => addVegetables(meal))
+        .then((meal) => addTopping(meal, toppings.chicken))
+        .then((meal) => addSauce(meal, sauces.youWok)),
+    preparedExtrasLinda,
+]);
+
+const monicasOrder = Promise.all([
+    preparePortion(sizes.medium, bases.whiteRice)
+        .then((meal) => addVegetables(meal))
+        .then((meal) => addTopping(meal, toppings.shrimps))
+        .then((meal) => addSauce(meal, sauces.soya)),
+    preparedExtrasMonica,
+]);
+
+const ninasOrder = preparePortion(sizes.large, bases.riceNoodles)
+    .then((meal) => addVegetables(meal))
+    .then((meal) => addTopping(meal, toppings.calamari))
+    .then((meal) => addSauce(meal, sauces.sweetSour));
+
+const oliviasOrder = Promise.all([
+    preparePortion(sizes.large, bases.riceNoodles)
+        .then((meal) => addVegetables(meal))
+        .then((meal) => addTopping(meal, toppings.calamari))
+        .then((meal) => addSauce(meal, sauces.thai)),
+    preparedExtrasOlivia,
+]);
+
+const theOrder = Promise.all([
+    lindasOrder,
+    monicasOrder,
+    ninasOrder,
+    oliviasOrder,
+]);
+
+theOrder.then(([lindasMeal, monicasMeal, ninasMeal, oliviasMeal]) => {
+    prettyPrintMeal(lindasMeal);
+    prettyPrintMeal(monicasMeal);
+    prettyPrintMeal(ninasMeal);
+    prettyPrintMeal(oliviasMeal);
+});
 
 theOrder
     .then(([lindasMeal, monicasMeal, ninasMeal, oliviasMeal]) => {

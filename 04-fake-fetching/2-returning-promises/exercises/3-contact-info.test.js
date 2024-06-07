@@ -9,8 +9,12 @@ const { log } = labeledLogger();
 /**
  *
  */
-const contactInfo = () => {};
-
+const contactInfo = (id) => {
+    return fetchUserById(id)
+      .then((userData) => console.log(userData))
+      .catch((err) => console.error(err));
+  };
+  
 // --- test function ---
 
 describe("contactInfo returns a specific user's contact info", () => {

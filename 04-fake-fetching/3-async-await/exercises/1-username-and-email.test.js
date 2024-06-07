@@ -8,7 +8,11 @@ const { log } = labeledLogger();
  *
  * @async
  */
-const usernameAndEmail = async () => {};
+const usernameAndEmail = async (id) => {
+    const user = await fetchUserById(id);
+    return `${user.id}. ${user.username}, ${user.email}`;
+  };
+  
 
 describe("usernameAndEmail returns the user's id, name and email", () => {
     it("returns user 2's info", async () => {

@@ -1,0 +1,145 @@
+.root {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.container {
+    margin: 40px;
+    min-width: 40vw;
+    max-width: 80vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: -1;
+}
+
+.table-section {
+    height: 60vh;
+    max-width: 620px;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid black;
+    border-radius: 8px;
+    overflow-y: scroll;
+}
+
+.table-main {
+    display: flex;
+    flex-direction: column;
+}
+
+.table-head {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    background-color: white;
+    width: 620px;
+    top: 200px;
+    height: 100px;
+    margin-top: -20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid black;
+}
+
+.t-body {
+    margin-top: 120px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+}
+
+.t-data {
+    min-width: 200px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    text-align: center;
+}
+.t-no-data {
+    padding-top: 10px;
+    text-align: center;
+    min-width: 600px;
+}
+
+.head-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.btn-div {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-div {
+    min-width: 160px;
+}
+
+.input {
+    max-width: 120px;
+}
+
+.filter-section {
+    width: 160px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.paginator-section {
+    width: 100%;
+    height: 80px;
+    border: 1px black solid;
+    border-radius: 6px;
+    background-color: white;
+    position: relative;
+    bottom: 10px;
+}
+
+.paginator-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.total-section {
+    border-right: black 1px solid;
+    max-height: 80px;
+    padding-right: 20px;
+}
+
+.page-size-section {
+    border-left: black 1px solid;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 20px;
+}
+
+.btn-dis {
+    color: rgb(160, 159, 159);
+    pointer-events: none;
+    margin: 2px;
+}
+
+.pag-btn-sec {
+    display: flex;
+    flex-direction: row;
+}
+
+.pag-num-sec {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.btn-order {
+    margin: 2px;
+}
+
+.num-btn {
+    margin: 2px;
+}

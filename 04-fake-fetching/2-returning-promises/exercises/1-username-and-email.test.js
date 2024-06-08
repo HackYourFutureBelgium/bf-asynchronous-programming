@@ -9,8 +9,14 @@ const { log } = labeledLogger();
 /**
  *
  */
-const usernameAndEmail = () => {};
-
+const usernameAndEmail = (id) => {
+    return fetchUserById(id)
+      .then((userData) => {
+        return `${userData.id}. ${userData.username}, ${userData.email}`;
+      })
+      .catch((err) => console.error(err));
+  };
+  
 // --- test function ---
 
 describe("usernameAndEmail: returns a user's name", () => {

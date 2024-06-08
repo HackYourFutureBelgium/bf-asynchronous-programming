@@ -25,11 +25,17 @@ import {
  *  Complete the following code so that the test passes
  */
 
-const preparedExtras = _;
+const preparedExtrasGeralt = Promise.all(
+    [extras.springOnion, extras.broccoli, extras.roastedPeanuts].map((e) => prepareExtra(e))
+);
 
-const mealWithoutExtras = _;
+const mealWithoutExtrasGeralt = preparePortion(sizes.small, bases.riceNoodles)
+    .then((meal) => addVegetables(meal))
+    .then((meal) => addSauce(meal, sauces.satay));
 
-const geraltsMeal = _;
+const geraltsMeal = Promise.all([preparedExtrasGeralt, mealWithoutExtrasGeralt])
+    .then(([thePreparedExtras, meal]) => addPreparedExtras(meal, thePreparedExtras))
+    .then((meal) => bag(meal));
 
 geraltsMeal
     .then((theMeal) => {

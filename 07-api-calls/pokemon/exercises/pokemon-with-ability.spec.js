@@ -2,6 +2,9 @@ import { pokemonWithAbility } from './pokemon-with-ability.js';
 
 describe('pokemonWithAbility: returns an array of all Pokemon with a specific ability', () => {
     it('returns all pokemon who can "volt-absorb"', async () => {
+        setTimeout(() => {
+            return true;
+        });
         const actual = await pokemonWithAbility('volt-absorb');
         expect(actual).toEqual([
             {
@@ -35,6 +38,13 @@ describe('pokemonWithAbility: returns an array of all Pokemon with a specific ab
             {
                 name: 'arctozolt',
                 url: 'https://pokeapi.co/api/v2/pokemon/881/',
+            },
+            { name: 'pawmo', url: 'https://pokeapi.co/api/v2/pokemon/922/' },
+            { name: 'pawmot', url: 'https://pokeapi.co/api/v2/pokemon/923/' },
+            { name: 'wattrel', url: 'https://pokeapi.co/api/v2/pokemon/940/' },
+            {
+                name: 'kilowattrel',
+                url: 'https://pokeapi.co/api/v2/pokemon/941/',
             },
             {
                 name: 'thundurus-therian',

@@ -20,10 +20,10 @@ import {
  */
 
 const aliceMeal = preparePortion(sizes.medium, bases.whiteRice)
-    .then((meal) => addVegetables(meal))
-    .then((meal) => addTopping(meal, toppings.calamari))
-    .then((meal) => addSauce(meal, sauces.sweetChilli))
-    .then((meal) => bag(meal));
+  .then((meal) => addVegetables(meal))
+  .then((meal) => addTopping(meal, toppings.calamari))
+  .then((meal) => addSauce(meal, sauces.sweetChilli))
+  .then((meal) => bag(meal));
 
 aliceMeal
     .then((theMeal) => {

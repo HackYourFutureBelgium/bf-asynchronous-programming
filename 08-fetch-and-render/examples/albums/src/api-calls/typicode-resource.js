@@ -13,6 +13,8 @@ export const typicodeResource = async (...params) => {
     const paramsPath = params.join('/');
     const URL = `${ORIGIN}/${paramsPath}`;
 
+    // https://jsonplaceholder.typicode.com/albums/1/photos
+
     const encodedURL = encodeURI(URL);
     const response = await fetch(encodedURL);
 

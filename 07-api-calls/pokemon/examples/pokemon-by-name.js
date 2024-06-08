@@ -1,4 +1,5 @@
 import { labeledLogger } from '../../../lib/labeled-logger.js';
+import fetch from 'node-fetch';
 
 import { ORIGIN } from '../config.js';
 

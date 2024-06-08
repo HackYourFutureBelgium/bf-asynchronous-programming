@@ -1,4 +1,4 @@
-import { labeledLogger } from '../../../lib/labeled-logger.js';
+import { labeledLogger } from '../../lib/labeled-logger.js';
 
 const { log, error } = labeledLogger();
 
@@ -35,10 +35,10 @@ const inputANumberExecutor = (resolve, reject) => {
     const isANumber =
         userInput !== '' && userInput !== null && !Number.isNaN(userNumber);
 
-    if (_) {
-        _(_);
+    if (isANumber) {
+        resolve(userNumber);
     } else {
-        _('input is not a number: ' + userInput);
+        reject('input is not a number: ' + userInput);
     }
 };
 const handleRejection = (err) => {
@@ -50,10 +50,10 @@ const isEvenNumber = (resolvedValue) => {
 };
 
 // use callbacks
-new Promise(_)
-    ._(_) // is the number greater than zero?
-    ._(_) // is the number even?
-    ._(_) // log the success/failure of the user's input
-    ._(_); // did an error or rejection occur?
+new Promise(inputANumberExecutor)
+    .then(mustBeGreaterThanZero) // is the number greater than zero?
+    .then(isEvenNumber) // is the number even?
+    .then(logSuccessFailure) // log the success/failure of the user's input
+    .catch(handleRejection); // did an error or rejection occur?
 
 log('= = = =  the call stack is empty  = = = =');

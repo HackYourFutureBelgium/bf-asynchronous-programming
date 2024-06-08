@@ -12,6 +12,7 @@ const getIntros = async (ids = []) => {
 
     return infos;
 };
+
 // --- --- tests --- ---
 
 describe('getIntros: returns an array of user introductions', () => {

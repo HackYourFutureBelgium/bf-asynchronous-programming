@@ -13,6 +13,7 @@ const findGeoCoordinates = async (ids = []) => {
         };
     });
 };
+
 // --- --- tests --- ---
 
 describe('findGeoCoordinates: returns an array of user coordinates', () => {

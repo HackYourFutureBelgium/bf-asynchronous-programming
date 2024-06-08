@@ -9,8 +9,8 @@ const { log } = labeledLogger();
  * @async
  */
 const userWorksAt = async (id, company) => {
-    const user = await fetchUserById(id);
-    if (user.company.name === company) {
+    const userData = await fetchUserById(id);
+    if (userData.company.name === company) {
         return true;
     } else {
         return false;

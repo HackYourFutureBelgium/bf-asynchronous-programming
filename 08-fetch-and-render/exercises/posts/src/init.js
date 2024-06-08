@@ -1,4 +1,3 @@
-import { userInputListener } from '../src/listeners/userInputListeners.js';
-import { userInputHandler } from './handlers/useInputHandlers.js';
+import { userInputListener } from './listeners/userInputListener.js';
 
 userInputListener('choose-post-button');

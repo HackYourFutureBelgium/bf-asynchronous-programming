@@ -11,12 +11,12 @@ const { log } = labeledLogger();
  */
 const usernameAndEmail = (id) => {
     return fetchUserById(id)
-      .then((user) => {
-        return `$0{user.id}. ${user.username}, ${userData.email}`;
+      .then((userData) => {
+        return `${userData.id}. ${userData.username}, ${userData.email}`;
       })
       .catch((err) => console.error(err));
   };
-
+  
 // --- test function ---
 
 describe("usernameAndEmail: returns a user's name", () => {

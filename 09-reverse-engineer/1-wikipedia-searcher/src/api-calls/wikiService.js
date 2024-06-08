@@ -1,3 +1,4 @@
+
 import { BASE_URL } from '../config.js';
 
 export const wikiService = async (searchValue = '') => {

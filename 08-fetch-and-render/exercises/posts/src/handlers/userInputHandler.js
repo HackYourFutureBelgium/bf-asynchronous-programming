@@ -4,7 +4,7 @@ import { state } from '../data/state.js';
 
 export const userInputHandler = async (event) => {
     const postId = event.target.form.postId.value;
-    //console.log(postId);
+    console.log(postId);
 
     try {
         const postPromise = apiService('posts', postId);
@@ -15,13 +15,11 @@ export const userInputHandler = async (event) => {
             commentsPromise,
         ]);
 
-        state.post = post;
-        state.comments = comments;
-        //console.log(state);
+        // state.post = post;
+        // state.comments = comments;
+        // console.log(state, post);
 
-        renderPost();
-       
-        
+        renderPost(post, comments);
     } catch (err) {
         console.error(err);
     }

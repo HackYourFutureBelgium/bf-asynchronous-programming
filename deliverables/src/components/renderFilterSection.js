@@ -1,3 +1,4 @@
+
 import { clearFilterHandler } from '../handlers/filterHandlers/clearFilterHandler.js';
 import { filterHandler } from '../handlers/filterHandlers/filterHandler.js';
 

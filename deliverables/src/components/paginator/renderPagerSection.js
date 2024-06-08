@@ -1,3 +1,4 @@
+
 import { state } from '../../../data/state.js';
 import { setPageNumberHandler } from '../../handlers/paginationHandlers/setPageNumberHandler.js';
 import { renderNumberButtons } from './renderNumberButtons.js';

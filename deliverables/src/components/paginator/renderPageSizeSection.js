@@ -1,3 +1,4 @@
+
 import { PAGE_SIZES } from '../../../data/data.js';
 import { state } from '../../../data/state.js';
 import { setPageSizeHandler } from '../../handlers/paginationHandlers/setPageSizeHandler.js';
